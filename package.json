@@ -4,7 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "serve": "live-server public/",
     "build": "webpack",
     "build:prod": "webpack --optimization-minimize --env production",
     "dev-server": "webpack-dev-server",
@@ -17,6 +16,7 @@
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.16.0",
+    "@babel/preset-stage-2": "^7.8.3",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.5",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
@@ -28,12 +28,8 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^6.4.0",
-    "enzyme": "^3.11.0",
-    "enzyme-to-json": "^3.6.2",
     "express": "^4.17.1",
-    "jest": "^27.3.1",
     "jquery": "^3.6.0",
-    "live-server": "^1.2.1",
     "mini-css-extract-plugin": "^2.4.3",
     "moment": "^2.29.1",
     "node-sass": "^6.0.1",
@@ -46,17 +42,20 @@
     "react-modal": "^3.14.3",
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.3.0",
-    "react-test-renderer": "^17.0.2",
     "redux": "^4.1.1",
     "sass-loader": "^12.2.0",
     "style-loader": "^3.3.1",
     "uuid": "^3.4.0",
     "validator": "^13.6.0",
-    "webpack": "^5.59.1",
-    "webpack-dev-server": "^4.3.1"
+    "webpack": "^5.59.1"
   },
   "devDependencies": {
-    "@babel/preset-stage-2": "^7.8.3",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
+    "jest": "^27.3.1",
+    "react-test-renderer": "^17.0.2",
+    "webpack-dev-server": "^4.3.1",
     "webpack-cli": "^4.9.1"
+
   }
 }

@@ -1,6 +1,7 @@
 node_modules
 _jest.config.json
 webpack.development.config.js
-public/bundle.js
-public/bundle.js.LICENSE.text
-public/styles.css
+webpack.common.js
+webpack.dev.js
+webpack.prod.js
+public/dist/
