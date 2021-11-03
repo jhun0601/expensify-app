@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/",
-    "build": "webpack --mode development",
+    "build": "webpack",
+    "build:prod": "webpack --optimization-minimize --env production",
     "dev-server": "webpack-dev-server",
     "test": "jest --config=jest.config.json"
   },
@@ -30,6 +31,7 @@
     "jest": "^27.3.1",
     "jquery": "^3.6.0",
     "live-server": "^1.2.1",
+    "mini-css-extract-plugin": "^2.4.3",
     "moment": "^2.29.1",
     "node-sass": "^6.0.1",
     "normalize.css": "^8.0.1",
