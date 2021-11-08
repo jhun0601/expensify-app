@@ -18,7 +18,6 @@ import {
     // enableNetwork,
 } from "firebase/compat/firestore";
 import "firebase/compat/storage";
-import constantApiKey from "./firebase.config";
 
 const firebaseConfig = {
     apiKey: process.env.FIREBASE_API_KEY,
