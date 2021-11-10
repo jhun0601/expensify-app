@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
-import AppRouter from "./routers/AppRouter";
+import AppRouter, { history } from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
 import { startSetExpenses } from "./actions/expenses";
 import { setTextFilter } from "./actions/filters";
@@ -21,24 +21,36 @@ const jsx = (
     </Provider>
 );
 
-ReactDOM.render(<p>LOADING ...</p>, document.getElementById("app"));
+let hasRendered = false;
+const renderApp = () => {
+    if (!hasRendered) {
+        ReactDOM.render(jsx, document.getElementById("app"));
+        hasRendered = true;
+    }
+};
 
-store.dispatch(startSetExpenses()).then(() => {
-    ReactDOM.render(jsx, document.getElementById("app"));
-});
+ReactDOM.render(<p>LOADING ...</p>, document.getElementById("app"));
 
 const auth = getAuth();
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
+        store.dispatch(startSetExpenses()).then(() => {
+            renderApp();
+        });
+
+        if (history.location.pathname === "/") {
+            history.push("/dashboard");
+        }
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
         // const uid = user.uid;
         // ...
-        console.log(user.uid);
+        // console.log(user.email);
     } else {
         // User is signed out
         // ...
-        console.log("logout");
+        renderApp();
+        history.push("/");
     }
 });

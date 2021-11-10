@@ -1,5 +1,5 @@
 import { googleAuthProvider } from "../firebase/firebase";
-import { getAuth, signInWithPopup } from "firebase/auth";
+import { getAuth, signInWithPopup, signOut } from "firebase/auth";
 
 const auth = getAuth();
 export const startLogin = () => {
@@ -24,6 +24,18 @@ export const startLogin = () => {
                 const credential =
                     GoogleAuthProvider.credentialFromError(error);
                 // ...
+            });
+    };
+};
+
+export const startLogout = () => {
+    return () => {
+        return signOut(auth)
+            .then(() => {
+                // Sign-out successful.
+            })
+            .catch((error) => {
+                // An error happened.
             });
     };
 };
