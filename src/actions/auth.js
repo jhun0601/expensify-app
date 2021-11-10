@@ -2,6 +2,11 @@ import { googleAuthProvider } from "../firebase/firebase";
 import { getAuth, signInWithPopup, signOut } from "firebase/auth";
 
 const auth = getAuth();
+export const login = (uid) => ({
+    type: "LOGIN",
+    uid,
+});
+
 export const startLogin = () => {
     return () => {
         return signInWithPopup(auth, googleAuthProvider)
@@ -22,11 +27,14 @@ export const startLogin = () => {
                 const email = error.email;
                 // The AuthCredential type that was used.
                 const credential =
-                    GoogleAuthProvider.credentialFromError(error);
+                    googleAuthProvider.credentialFromError(error);
                 // ...
             });
     };
 };
+export const logout = () => ({
+    type: "LOGOUT",
+});
 
 export const startLogout = () => {
     return () => {

@@ -5,8 +5,9 @@ import { Provider } from "react-redux";
 import AppRouter, { history } from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
 import { startSetExpenses } from "./actions/expenses";
-import { setTextFilter } from "./actions/filters";
-import getVisibleExpense from "./selectors/expenses";
+import { login, logout } from "./actions/auth";
+// import { setTextFilter } from "./actions/filters";
+// import getVisibleExpense from "./selectors/expenses";
 
 // css
 import "normalize.css/normalize.css";
@@ -35,6 +36,7 @@ const auth = getAuth();
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
+        store.dispatch(login(user.uid));
         store.dispatch(startSetExpenses()).then(() => {
             renderApp();
         });
@@ -50,6 +52,7 @@ onAuthStateChanged(auth, (user) => {
     } else {
         // User is signed out
         // ...
+        store.dispatch(logout());
         renderApp();
         history.push("/");
     }
