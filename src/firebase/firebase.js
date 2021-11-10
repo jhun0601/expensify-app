@@ -31,7 +31,7 @@ const firebaseConfig = {
 };
 const firebaseApp = initializeApp(firebaseConfig);
 
-const db = getDatabase(firebaseApp);
+const db = getDatabase();
 
 export { firebaseApp, db as default };
 // const dbref = ref(db);
