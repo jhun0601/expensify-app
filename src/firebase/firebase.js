@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { GoogleAuthProvider } from "firebase/auth";
 import {
     getDatabase,
     ref,
@@ -30,10 +31,10 @@ const firebaseConfig = {
     measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
 const firebaseApp = initializeApp(firebaseConfig);
-
+const googleAuthProvider = new GoogleAuthProvider();
 const db = getDatabase();
 
-export { firebaseApp, db as default };
+export { firebaseApp, googleAuthProvider, db as default };
 // const dbref = ref(db);
 
 // push(ref(db, "expenses"), {
