@@ -24,6 +24,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
@@ -50,17 +51,17 @@
     "redux": "^4.1.1",
     "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.4.0",
-    "sass-loader": "^12.2.0",
+    "sass-loader": "^12.3.0",
     "style-loader": "^3.3.1",
     "uuid": "^3.4.0",
-    "validator": "^13.6.0",
-    "webpack": "^5.59.1"
+    "validator": "^13.6.0"
   },
   "devDependencies": {
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.2",
     "jest": "^27.3.1",
     "react-test-renderer": "^17.0.2",
+    "webpack": "^5.63.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.3.1"
   }

@@ -6,6 +6,7 @@ import AppRouter, { history } from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
 import { startSetExpenses } from "./actions/expenses";
 import { login, logout } from "./actions/auth";
+import LoadingPage from "./components/LoadingPage";
 // import { setTextFilter } from "./actions/filters";
 // import getVisibleExpense from "./selectors/expenses";
 
@@ -30,7 +31,7 @@ const renderApp = () => {
     }
 };
 
-ReactDOM.render(<p>LOADING ...</p>, document.getElementById("app"));
+ReactDOM.render(<LoadingPage />, document.getElementById("app"));
 
 const auth = getAuth();
 
