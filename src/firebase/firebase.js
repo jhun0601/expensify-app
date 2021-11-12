@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
 import {
     getDatabase,
     ref,
@@ -32,9 +32,10 @@ const firebaseConfig = {
 };
 const firebaseApp = initializeApp(firebaseConfig);
 const googleAuthProvider = new GoogleAuthProvider();
+const facebookAuthProvider = new FacebookAuthProvider();
 const db = getDatabase();
 
-export { firebaseApp, googleAuthProvider, db as default };
+export { firebaseApp, googleAuthProvider, facebookAuthProvider, db as default };
 // const dbref = ref(db);
 
 // push(ref(db, "expenses"), {
