@@ -14,9 +14,16 @@ import {
 } from "../actions/filters";
 
 export class ExpenseListFilters extends React.Component {
-    state = {
-        calendarFocused: null,
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            calendarFocused: null,
+        };
+
+        this.onDatesChange = this.onDatesChange.bind(this);
+        this.onFocusChange = this.onFocusChange.bind(this);
+    }
+
     onDatesChange = ({ startDate, endDate }) => {
         this.props.setStartDate(startDate);
         this.props.setEndDate(endDate);
@@ -67,8 +74,8 @@ export class ExpenseListFilters extends React.Component {
                             showClearDates={true}
                             numberOfMonths={1}
                             isOutsideRange={() => false}
-                            startDateId="start"
-                            endDateId="end"
+                            startDateId={"3dfjklds"}
+                            endDateId={"asdasf"}
                         />
                     </div>
                 </div>
@@ -83,7 +90,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     setTextFilter: (text) => dispatch(setTextFilter(text)),
     sortByAmount: () => dispatch(sortByAmount()),
-    sortbyDate: () => dispatch(sortByDate()),
+    sortByDate: () => dispatch(sortByDate()),
     setStartDate: (startDate) => dispatch(setStartDate(startDate)),
     setEndDate: (endDate) => dispatch(setEndDate(endDate)),
 });

@@ -21,6 +21,7 @@ exports[`Should render expense list item correctly  1`] = `
   <h3
     className="list-item__data"
   >
+    P 
     1.00
   </h3>
 </Link>
